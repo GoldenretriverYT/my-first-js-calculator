@@ -1,3 +1,8 @@
+/**
+ * Jokes aside, this is the generator used to generate the mycalc.js
+ * It isn't well written either, i just threw it together in like 5 minutes
+ */
+
 const fs = require("fs");
 var max = 101;
 
