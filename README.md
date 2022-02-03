@@ -7,4 +7,7 @@ This is my first js calcualtro!!
  - very well written and optimized (only 40k / 4 million lines!)
  - great for production evnrionment (only 218kb / 24.6mb when zipped!)
  - super fast!! calculate quicker then ever
+
+# hint
+if you get no answer u dumb, u used wrng number 🤣
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><i>this project is a joke btw</i>
