@@ -4,7 +4,10 @@
  */
 
 const fs = require("fs");
-var max = 101;
+var max = 100;
+
+console.log("Writing " + (max*max*4) + " calculations...");
+var start = Date.now();
 
 fs.writeFileSync("mycalc.js", `
     const readline = require('readline');
@@ -30,14 +33,20 @@ fs.writeFileSync("mycalc.js", `
 `);
 
 for(var i = 0; i < max; i++) {
+    var str = "";
+
     for(var j = 0; j < max; j++) {
-        fs.appendFileSync("mycalc.js", `if(num1 == ${i} && op == "+" && num2 == ${j}) console.log("The correct answer is: ${i + j}");\n`);
-        fs.appendFileSync("mycalc.js", `if(num1 == ${i} && op == "-" && num2 == ${j}) console.log("The correct answer is: ${i - j}");\n`);
-        fs.appendFileSync("mycalc.js", `if(num1 == ${i} && op == "*" && num2 == ${j}) console.log("The correct answer is: ${i * j}");\n`);
-        fs.appendFileSync("mycalc.js", `if(num1 == ${i} && op == "/" && num2 == ${j}) console.log("The correct answer is: ${i / j}");\n`);
+        str += `if(num1 == ${i} && op == "+" && num2 == ${j}) console.log("The correct answer is: ${i + j}");
+        if(num1 == ${i} && op == "-" && num2 == ${j}) console.log("The correct answer is: ${i - j}");
+        if(num1 == ${i} && op == "*" && num2 == ${j}) console.log("The correct answer is: ${i * j}");
+        if(num1 == ${i} && op == "/" && num2 == ${j}) console.log("The correct answer is: ${i / j}");\n`;
     }
+
+    fs.appendFileSync("mycalc.js", str);
 }
 
 fs.appendFileSync("mycalc.js", `});
     });
 });`);
+
+console.log("Done after " + (Date.now() - start) + "ms");
